@@ -1,0 +1,267 @@
+/* region main body */
+body {
+    background-color: #edf6f9;
+    margin: 0;
+}
+/* endregion */
+/* region navbar */
+.navbar {
+    background-color: #03045e;
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    height: 80px;
+}
+.navbar-main {
+    justify-content: space-evenly;
+    padding: 0px 1rem;
+    display: flex;
+}
+.link {
+    text-decoration: none;
+    color: #edf6f9;
+    font-weight: 800;
+    font-size: 20px;
+}
+.link:hover {
+    text-decoration: underline #ccc;
+    color: #ccc;
+}
+/* endregion */
+/* region sudoku page */
+.settings-wraper,
+.sudoku-numbers,
+.option-wraper,
+.timer {
+    max-width: 450px;
+    width: 100vw;
+}
+.sudoku-wraper {
+    flex-wrap: wrap;
+    display: flex;
+}
+.sudoku-cube {
+    justify-content: center;
+    display: flex;
+    width: 100vw;
+    margin: 10px;
+}
+.option-wraper {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    display: flex;
+    height: 50px;
+}
+/* endregion */
+/* region settings */
+.settings-window {
+    justify-content: center;
+    align-items: center;
+    max-height: 600px;
+    height: 100vh;
+    display: flex;
+}
+.settings-wraper {
+    background-color: #14213d;
+    border: 1px solid #14213d;
+    border-radius: 25px;
+    margin: 0px 10px;
+    height: 400px;
+}
+.settings-value {
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    margin: 2rem auto 0px auto;
+    display: flex;
+    color: #ccc;
+    width: 80%;
+}
+select {
+    background-color: inherit;
+    outline: none;
+    color: #ccc;
+    width: 100px;
+    border: none;
+}
+.selector {
+    justify-content: center;
+    display: flex;
+}
+.selector-field,
+.selector {
+    cursor: pointer;
+    width: 120px;
+}
+.selector-field {
+    background-color: white;
+    border: 3px solid #ccc;
+    position: absolute;
+    color: #000;
+    z-index: 2;
+}
+.selector-line {
+    justify-content: start;
+    padding-left: 10px;
+    display: flex;
+}
+.selector-field > .selector-line {
+    border-bottom: 1px solid #ccc;
+}
+.selector-field > .selector-line:last-child {
+    border-bottom: none;
+}
+.selector-line:hover {
+    background-color: #ccc;
+}
+.d-none {
+    display: none;
+}
+/* endregion */
+/* region sudoku line and point */
+.one-line {
+    justify-content: center;
+    display: flex;
+}
+.one-point {
+    background-color: #ffe5d9;
+    border: 1px solid #000;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    width: 40px;
+}
+.const-number {
+    font-weight: 1000;
+    font-size: large;
+}
+.one-line .one-point:nth-child(3n) {
+    border-right: 3px solid #000;
+}
+.one-line .one-point:first-child {
+    border-left: 3px solid #000;
+}
+div .one-line:nth-child(3n) {
+    border-bottom: 3px solid #000;
+}
+div .one-line:first-child {
+    border-top: 3px solid #000;
+}
+.selected {
+    background-color: #457b9d;
+}
+.selected-row {
+    background-color: #a8dadc;
+}
+.error {
+    color: red;
+}
+.fill {
+    background-color: #ccc;
+}
+.glow {
+    font-weight: 1000;
+    color: #5a189a;
+    font-size: 23px;
+}
+.number-selected {
+    background-color: #457b9d;
+}
+/* endregion */
+/* region numbers */
+.number-line {
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+.number-text {
+    margin-left: 1rem;
+    flex: 3;
+}
+/* endregion */
+/* region new game */
+.new-start-wraper {
+    justify-content: center;
+    align-items: center;
+    max-height: 700px;
+    display: flex;
+    height: 100vh;
+}
+.start-button {
+    border: 1px solid #14213d;
+    background-color: #14213d;
+    border-radius: 25px;
+    padding: 20px 0px;
+    font-weight: 800;
+    color: #e5e5e5;
+    cursor: pointer;
+    font-size: 20px;
+    width: 300px;
+}
+.disable {
+    border: 1px solid #fec89a;
+    background-color: inherit;
+    border-radius: 25px;
+    padding: 20px 0px;
+    cursor: inherit;
+    color: #fec89a;
+    font-weight: 800;
+    font-size: 20px;
+    width: 300px;
+}
+/* endregion */
+/* region main purpose */
+.fl1 {
+    flex: 1 100px;
+}
+.fl2 {
+    flex: 2 200px;
+}
+.fl3 {
+    flex: 3 450px;
+}
+.d-flex {
+    display: flex;
+}
+.mt1 {
+    margin-top: 5px;
+}
+.mt2 {
+    margin-top: 10px;
+}
+.mr1 {
+    margin-right: 5px;
+}
+.mr2 {
+    margin-right: 10px;
+}
+.mb1 {
+    margin-bottom: 5px;
+}
+.mb2 {
+    margin-bottom: 10px;
+}
+.ml1 {
+    margin-left: 5px;
+}
+.ml2 {
+    margin-left: 10px;
+}
+/* endregion */
+/* region media */
+.sudoku-numbers {
+    justify-content: center;
+    display: flex;
+    height: 40px;
+}
+.number-line {
+    width: 40px;
+}
+.number-text {
+    display: none;
+}
+/* endregion */
