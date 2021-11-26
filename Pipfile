@@ -12,3 +12,4 @@ requests = "*"
 python_version = "3.9"
 
 [dev-packages]
+autopep8 = "*"
