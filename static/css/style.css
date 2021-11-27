@@ -64,11 +64,15 @@ body {
     display: flex;
 }
 .settings-wraper {
+    padding: 3rem 15px 2rem 15px;
     background-color: #14213d;
     border: 1px solid #14213d;
     border-radius: 25px;
     margin: 0px 10px;
-    height: 400px;
+}
+.settings-inner-box {
+    margin-bottom: 2rem;
+    min-height: 160px;
 }
 .settings-value {
     border-bottom: 1px solid #ccc;
@@ -120,6 +124,49 @@ select {
 }
 /* endregion */
 /* region sudoku line and point */
+/* region login */
+.login-icon {
+    filter: invert(100%) sepia(76%) saturate(683%) hue-rotate(174deg) brightness(102%) contrast(95%);
+    margin-left: 5px;
+}
+.login-icon:hover {
+    filter: invert(91%) sepia(8%) saturate(12%) hue-rotate(37deg) brightness(91%) contrast(88%);
+    cursor: pointer;
+}
+.login-wrapper {
+    padding: 5rem 15px 3rem 15px;
+}
+.login-row {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    color: #ccc;
+}
+.login-row > input {
+    background-color: inherit;
+    padding-left: 10px;
+    outline: none;
+    color: #ccc;
+    height: 1rem;
+    border: none;
+    width: 120px;
+    border-bottom: 1px solid #ccc;
+}
+.login-button {
+    justify-content: center;
+    margin-top: 5rem;
+    display: flex;
+}
+.login {
+    background-color: #ffecd1;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 0;
+    border: none;
+    width: 150px;
+}
+/* endregion */
 .one-line {
     justify-content: center;
     display: flex;
