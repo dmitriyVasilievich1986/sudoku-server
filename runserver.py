@@ -25,16 +25,17 @@ def data_base_check_connection(*args: tuple, **kwargs: dict) -> bool:
     # get connection settings from main django settings
     connection: BaseDatabaseWrapper = get_connection()
     # get port, host values from settings. if they exist
-    db_text: str = "Host: {}, Port: {}".format(
+    db_text: str = "Host: {}, Port: {}, DB: {}".format(
         connection.settings_dict.get("HOST"),
         connection.settings_dict.get("PORT"),
+        connection.settings_dict.get("NAME"),
     )
 
     # try to connect to db
     while MAX_DB_CONNECTION_TRY:
         try:
-            connection.connect()
             logging.debug(f"Connection succeded. {db_text}")
+            connection.connect()
             return True
         except OperationalError as e:
             logging.warning(
