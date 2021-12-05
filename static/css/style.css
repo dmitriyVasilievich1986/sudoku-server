@@ -71,8 +71,12 @@ body {
     margin: 0px 10px;
 }
 .settings-inner-box {
-    margin-bottom: 2rem;
-    min-height: 160px;
+    align-items: center;
+    min-height: 140px;
+    display: flex;
+}
+.settings-inner-box > div {
+    width: 100%;
 }
 .settings-value {
     border-bottom: 1px solid #ccc;
@@ -122,6 +126,15 @@ select {
 .d-none {
     display: none;
 }
+.row {
+    display: flex;
+}
+.align-center {
+    align-items: center;
+}
+.text-center {
+    text-align: center;
+}
 /* endregion */
 /* region sudoku line and point */
 /* region login */
@@ -142,16 +155,6 @@ select {
     display: flex;
     color: #ccc;
 }
-.login-row > input {
-    background-color: inherit;
-    padding-left: 10px;
-    outline: none;
-    color: #ccc;
-    height: 1rem;
-    border: none;
-    width: 120px;
-    border-bottom: 1px solid #ccc;
-}
 .login-button {
     justify-content: center;
     margin-top: 5rem;
@@ -165,6 +168,35 @@ select {
     padding: 10px 0;
     border: none;
     width: 150px;
+}
+.account-link > a,
+.account-link {
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    display: flex;
+}
+.account-link > a:hover {
+    color: #fff;
+}
+.input-component {
+    flex-direction: column;
+    display: flex;
+    height: 25px;
+}
+.input-component > label {
+    margin-left: 10px;
+    color: #e63946;
+}
+.input-component > input {
+    background-color: inherit;
+    padding-left: 10px;
+    outline: none;
+    color: #ccc;
+    height: 1rem;
+    border: none;
+    width: 120px;
+    border-bottom: 1px solid #ccc;
 }
 /* endregion */
 .one-line {
