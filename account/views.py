@@ -22,7 +22,6 @@ class AccountViewSet(GenericViewSet, mixins.CreateModelMixin):
         return response.Response(serializer.data)
 
     def create(self: GenericViewSet, request: HttpRequest, *args: tuple, **kwargs: dict) -> response.Response:
-        print(f'data: {request.data}')
         serializer: AccountSerializer = self.get_serializer(
             data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
@@ -31,7 +30,7 @@ class AccountViewSet(GenericViewSet, mixins.CreateModelMixin):
 
     def partial_update(self: GenericViewSet, request: HttpRequest, *args: tuple, **kwargs: dict) -> response.Response:
         instance: Account = self.get_object()
-        if instance.id != request.user.id:
+        if request.user is None or instance.id != request.user.id:
             raise exceptions.NotAuthenticated
         instance.update(**request.data)
         serializer: AccountSerializer = self.get_serializer(instance)
