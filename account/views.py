@@ -22,6 +22,7 @@ class AccountViewSet(GenericViewSet, mixins.CreateModelMixin):
         return response.Response(serializer.data)
 
     def create(self: GenericViewSet, request: HttpRequest, *args: tuple, **kwargs: dict) -> response.Response:
+        print(f'data: {request.data}')
         serializer: AccountSerializer = self.get_serializer(
             data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
@@ -47,7 +48,7 @@ class AccountViewSet(GenericViewSet, mixins.CreateModelMixin):
         serializer: AccountSerializer = self.get_serializer(instance)
         return response.Response(serializer.data)
 
-    @decorators.action(methods=["POST"], detail=False)
+    @decorators.action(methods=["GET"], detail=False)
     def logout(self: GenericViewSet, request: HttpRequest, *args: tuple, **kwargs: dict) -> response.Response:
         instance: Account = request.user
         if instance is None:
