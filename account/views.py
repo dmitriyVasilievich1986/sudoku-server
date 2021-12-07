@@ -1,5 +1,6 @@
 from rest_framework import response, exceptions, status, decorators
 from rest_framework.viewsets import GenericViewSet, mixins
+from django.contrib.auth.hashers import check_password
 from django.shortcuts import get_object_or_404
 from django.http.request import HttpRequest
 from .serializer import AccountSerializer
@@ -41,6 +42,8 @@ class AccountViewSet(GenericViewSet, mixins.CreateModelMixin):
         data: dict = json.loads(request.body)
         instance: Account = get_object_or_404(
             klass=Account, username=data.get("username"))
+        if not check_password(data.get("password"), instance.password):
+            raise exceptions.ValidationError({"password": "wrong password."})
         instance.token_expire = Account.get_token_expire_date()
         instance.token = Account.get_new_token()
         instance.save()

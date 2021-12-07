@@ -6,9 +6,21 @@ from .models import Account
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ['id', 'username', 'name', 'surname', 'token', 'token_expire']
+        fields = [
+            'token_expire',
+            'sudoku_cube',
+            'dificulty',
+            'username',
+            'password',
+            'surname',
+            'token',
+            'name',
+            'help',
+            'id',
+        ]
         extra_kwargs = {
             'token_expire': {"read_only": True},
+            'password': {"write_only": True},
             'token': {"read_only": True},
             'id': {"read_only": True},
         }
@@ -16,7 +28,7 @@ class AccountSerializer(serializers.ModelSerializer):
     def create(self: serializers.ModelSerializer, validated_data: dict, *args: tuple, **kwargs: dict) -> Account:
         message: dict = {
             field: "The field cannot be empty"
-            for field in ["username"]
+            for field in ["username", "password"]
             if field not in validated_data
         }
         if message:
