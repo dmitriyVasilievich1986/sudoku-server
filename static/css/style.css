@@ -64,7 +64,7 @@ body {
     display: flex;
 }
 .settings-wraper {
-    padding: 3rem 15px 2rem 15px;
+    padding: 2rem 2rem 4rem 2rem;
     background-color: #14213d;
     border: 1px solid #14213d;
     border-radius: 25px;
