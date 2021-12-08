@@ -7,15 +7,19 @@ body {
 /* region navbar */
 .navbar {
     background-color: #03045e;
+    justify-content: center;
     align-items: center;
+    min-height: 80px;
     flex-wrap: wrap;
     display: flex;
-    height: 80px;
 }
 .navbar-main {
     justify-content: space-evenly;
     padding: 0px 1rem;
+    max-width: 450px;
+    flex-wrap: wrap;
     display: flex;
+    width: 100%;
 }
 .link {
     text-decoration: none;
@@ -29,6 +33,11 @@ body {
 }
 /* endregion */
 /* region sudoku page */
+.sudoku-page {
+    justify-content: center;
+    display: flex;
+    padding: 5px;
+}
 .settings-wraper,
 .sudoku-numbers,
 .option-wraper,
@@ -37,7 +46,17 @@ body {
     width: 100vw;
 }
 .sudoku-wraper {
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-flow: column;
+    max-width: 450px;
+    display: flex;
+    width: 100vw;
+}
+.sudoku-wraper > div {
+    margin: 5px 0px;
+}
+.sudoku-page-line {
+    justify-content: center;
     display: flex;
 }
 .sudoku-cube {
@@ -64,11 +83,11 @@ body {
     display: flex;
 }
 .settings-wraper {
-    padding: 2rem 2rem 4rem 2rem;
     background-color: #14213d;
     border: 1px solid #14213d;
     border-radius: 25px;
     margin: 0px 10px;
+    padding: 2rem;
 }
 .settings-inner-box {
     align-items: center;
@@ -169,14 +188,16 @@ select {
     border: none;
     width: 150px;
 }
-.account-link > a,
 .account-link {
     justify-content: center;
     align-items: center;
-    color: #ccc;
     display: flex;
 }
-.account-link > a:hover {
+.account-link-create,
+.account-link {
+    color: #ccc;
+}
+.account-link-create:hover {
     color: #fff;
 }
 .input-component {
@@ -201,7 +222,9 @@ select {
 /* endregion */
 .one-line {
     justify-content: center;
+    flex-flow: row;
     display: flex;
+    width: 100%;
 }
 .one-point {
     background-color: #ffe5d9;
@@ -211,8 +234,8 @@ select {
     flex-wrap: wrap;
     cursor: pointer;
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 45px;
+    width: 100%;
 }
 .const-number {
     font-weight: 1000;
@@ -270,6 +293,10 @@ div .one-line:first-child {
     display: flex;
     height: 100vh;
 }
+.start-button-wraper {
+    max-width: 300px;
+    width: 100vw;
+}
 .start-button {
     border: 1px solid #14213d;
     background-color: #14213d;
@@ -277,20 +304,20 @@ div .one-line:first-child {
     padding: 20px 0px;
     font-weight: 800;
     color: #e5e5e5;
+    margin: 10px 0px;
     cursor: pointer;
     font-size: 20px;
-    width: 300px;
+    width: 100%;
 }
 .disable {
     border: 1px solid #fec89a;
     background-color: inherit;
     border-radius: 25px;
     padding: 20px 0px;
-    cursor: inherit;
     color: #fec89a;
     font-weight: 800;
+    cursor: inherit;
     font-size: 20px;
-    width: 300px;
 }
 /* endregion */
 /* region main purpose */
@@ -311,6 +338,12 @@ div .one-line:first-child {
 }
 .mt2 {
     margin-top: 10px;
+}
+.m1 {
+    margin: 5px;
+}
+.m2 {
+    margin: 10px;
 }
 .mr1 {
     margin-right: 5px;
