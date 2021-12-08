@@ -1,5 +1,6 @@
 __pycache__
 migrations
+dbdata
 *.sqlite3
 *.pyc
 *.env
