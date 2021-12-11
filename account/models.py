@@ -24,6 +24,7 @@ class Account(models.Model):
         blank=False, null=False)
     dificulty: models.IntegerField = models.IntegerField(default=40)
     help: models.BooleanField = models.BooleanField(default=True)
+    timer: models.IntegerField = models.IntegerField(default=0)
 
     @classmethod
     def create(
@@ -68,6 +69,7 @@ class Account(models.Model):
         self.sudoku_cube = kwargs.get("sudoku_cube", self["sudoku_cube"])
         self.dificulty = kwargs.get("dificulty", self["dificulty"])
         self.surname = kwargs.get("surname", self["surname"])
+        self.timer = kwargs.get("timer", self["timer"])
         self.help = kwargs.get("help", self["help"])
         self.name = kwargs.get("name", self["name"])
         self.save()

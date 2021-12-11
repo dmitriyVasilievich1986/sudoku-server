@@ -13,6 +13,7 @@ class AccountSerializer(serializers.ModelSerializer):
             'username',
             'password',
             'surname',
+            'timer',
             'token',
             'name',
             'help',
