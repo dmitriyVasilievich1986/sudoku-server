@@ -43,7 +43,7 @@ body {
 .option-wraper,
 .timer {
     max-width: 450px;
-    width: 100vw;
+    width: 100%;
 }
 .sudoku-wraper {
     justify-content: center;
