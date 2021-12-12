@@ -12,6 +12,7 @@ class AccountSerializer(serializers.ModelSerializer):
             'dificulty',
             'username',
             'password',
+            'history',
             'surname',
             'timer',
             'token',
@@ -22,6 +23,7 @@ class AccountSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'token_expire': {"read_only": True},
             'password': {"write_only": True},
+            'history': {"read_only": True},
             'token': {"read_only": True},
             'id': {"read_only": True},
         }

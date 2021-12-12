@@ -1,5 +1,6 @@
 from django.contrib.auth.hashers import make_password
 from datetime import datetime, timedelta
+from django.db.models.base import Model
 from django.utils import timezone
 from typing import Any, Union
 from django.db import models
@@ -78,3 +79,18 @@ class Account(models.Model):
     def logout(self: models.Model, *args: tuple, **kwargs: dict) -> None:
         self.token_expire = timezone.now()
         self.save()
+
+    @property
+    def history(self):
+        history_dict = dict()
+        for item in self.history_field.all():
+            if item.dificulty not in history_dict or history_dict[item.dificulty] > item.timer:
+                history_dict[item.dificulty] = item.timer
+        return history_dict
+
+
+class History(models.Model):
+    account: models.ForeignKey = models.ForeignKey(
+        to=Account, on_delete=models.CASCADE, related_name="history_field")
+    dificulty: models.IntegerField = models.IntegerField(default=40)
+    timer: models.IntegerField = models.IntegerField(default=0)

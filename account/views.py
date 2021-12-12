@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 from django.http.request import HttpRequest
 from .serializer import AccountSerializer
 from .permissions import TokenPermission
-from .models import Account
+from .models import Account, History
 import json
 
 
@@ -57,3 +57,12 @@ class AccountViewSet(GenericViewSet, mixins.CreateModelMixin):
             raise exceptions.NotAuthenticated
         instance.logout()
         return response.Response("logout", status.HTTP_204_NO_CONTENT)
+
+    @decorators.action(methods=["POST"], detail=False)
+    def history(self: GenericViewSet, request: HttpRequest, *args: tuple, **kwargs: dict) -> response.Response:
+        instance: Account = request.user
+        data: dict = json.loads(request.body)
+        h = History(account=instance, **data)
+        h.save()
+        serializer = self.get_serializer(instance)
+        return response.Response(serializer.data)
